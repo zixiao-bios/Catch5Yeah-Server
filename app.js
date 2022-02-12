@@ -1,4 +1,5 @@
 const http = require('http');
+const moment = require('moment')
 const verify = require('./verify');
 
 const port = 7977;
@@ -11,11 +12,11 @@ const server = http.createServer((req, res) => {
 
         switch (params.get("opt")) {
             case "date":
-                const date = new Date().toLocaleDateString();
+                const date = moment().format("Y-M-D");
                 res.write(date);
                 break;
             case "time":
-                const time = new Date().toLocaleTimeString('chinese', {hour12: false});
+                const time = moment().format("HH:mm");
                 res.write(time);
                 break;
             case "num":
