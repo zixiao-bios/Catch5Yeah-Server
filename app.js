@@ -11,13 +11,9 @@ const server = http.createServer((req, res) => {
         res.setHeader('Content-Type', 'text/plain');
 
         switch (params.get("opt")) {
-            case "date":
-                const date = moment().format("Y-M-D");
-                res.write(date);
-                break;
-            case "time":
-                const time = moment().format("HH:mm");
-                res.write(time);
+            case "timestamp":
+                const timestamp = moment().format("X");
+                res.write(timestamp);
                 break;
             case "num":
                 break;
