@@ -10,9 +10,13 @@ const server = http.createServer((req, res) => {
         res.setHeader('Content-Type', 'text/plain');
 
         switch (params.get("opt")) {
-            case "datetime":
-                const datetime = new Date().toLocaleString('chinese', {hour12: false});
-                res.write(datetime);
+            case "date":
+                const date = new Date().toLocaleDateString();
+                res.write(date);
+                break;
+            case "time":
+                const time = new Date().toLocaleTimeString('chinese', {hour12: false});
+                res.write(time);
                 break;
             case "num":
                 break;
