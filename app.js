@@ -17,8 +17,10 @@ const server = http.createServer((req, res) => {
                 res.write(timestamp);
                 break;
             case "num":
+                res.write(5);
                 break;
             case "message":
+                res.write("Surprise mother f**ker!!!");
                 break;
             default:
                 res.write("undefined option");
