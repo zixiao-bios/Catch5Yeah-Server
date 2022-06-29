@@ -6,8 +6,7 @@ const port = 7977;
 
 const server = http.createServer((req, res) => {
     console.log(req.url);
-    console.log(req.socket.localAddress);
-    console.log(req.socket.remoteAddress)
+    console.log("client IP: " + req.socket.remoteAddress)
     const params = new URL(req.url, 'https://example.org/').searchParams;
     if (params.get("id") === verify.id && params.get('password') === verify.password) {
         res.statusCode = 200;
