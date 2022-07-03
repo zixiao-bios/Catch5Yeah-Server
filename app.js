@@ -1,6 +1,6 @@
 const http = require('http');
 const moment = require('moment')
-const verify = require('./verify');
+const config = require('./config.json');
 
 const port = 7977;
 
@@ -8,7 +8,7 @@ const server = http.createServer((req, res) => {
     console.log(req.url);
     console.log("client IP: " + req.socket.remoteAddress)
     const params = new URL(req.url, 'https://example.org/').searchParams;
-    if (params.get("id") === verify.id && params.get('password') === verify.password) {
+    if (params.get("id") === config.api_verify.id && params.get('password') === config.api_verify.password) {
         res.statusCode = 200;
         res.setHeader('Content-Type', 'text/plain');
 
