@@ -1,0 +1,10 @@
+{
+  "extends": "@tsconfig/node16/tsconfig.json",
+
+  "compilerOptions": {
+    "resolveJsonModule": true
+  },
+
+  "include": ["./*", "entity/*", "./config.json"],
+  "exclude": ["node_modules"]
+}
