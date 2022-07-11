@@ -2,8 +2,6 @@ import moment from 'moment'
 import http from 'http'
 import config from './config.json'
 
-const port = 7977
-
 const server = http.createServer((req, res) => {
     console.log(req.url)
     console.log("client IP: " + req.socket.remoteAddress)
@@ -33,6 +31,6 @@ const server = http.createServer((req, res) => {
     }
 })
 
-server.listen(port, () => {
-    console.log('Server is running at port: ' + port)
+server.listen(config.server.port, () => {
+    console.log('Server is running at port: ' + config.server.port)
 })
