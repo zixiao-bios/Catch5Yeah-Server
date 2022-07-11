@@ -1,10 +1,16 @@
 {
   "extends": "@tsconfig/node16/tsconfig.json",
-
   "compilerOptions": {
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
     "resolveJsonModule": true
   },
-
-  "include": ["./*", "entity/*", "./config.json"],
-  "exclude": ["node_modules"]
+  "include": [
+    "./*",
+    "entity/*",
+    "./config.json"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }
